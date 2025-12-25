@@ -19,5 +19,5 @@ public class ShortUrl {
     @Column(nullable = false, unique = true, length = 10)
     private String shortUrl;
     private LocalDateTime createdAt;
-    private Long accessAccount = 0L;
+    private Long accessCount = 0L;
 }
