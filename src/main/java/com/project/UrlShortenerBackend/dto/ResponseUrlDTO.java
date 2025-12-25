@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class ResponseUrlDTO {
-    private String shortUrl;
+    private String shortCode;
     private Long accessCount;
 }

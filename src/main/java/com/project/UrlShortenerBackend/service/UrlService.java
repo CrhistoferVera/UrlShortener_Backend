@@ -4,12 +4,14 @@ import com.project.UrlShortenerBackend.model.ShortUrl;
 import com.project.UrlShortenerBackend.repository.UrlRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
 
 @Data
 @RequiredArgsConstructor
+@Service
 public class UrlService {
     private static final String BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private final UrlRepository urlRepository;
@@ -21,7 +23,7 @@ public class UrlService {
         }
         ShortUrl shortUrl= new ShortUrl();
         shortUrl.setOriginalUrl(originalUrl);
-        shortUrl.setShortUrl(code);
+        shortUrl.setShortCode(code);
         shortUrl.setCreatedAt(LocalDateTime.now());
 
         return urlRepository.save(shortUrl);

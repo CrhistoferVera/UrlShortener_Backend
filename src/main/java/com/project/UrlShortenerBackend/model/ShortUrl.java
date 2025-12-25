@@ -19,7 +19,7 @@ public class ShortUrl {
     @Column(nullable = false, length = 2048)
     private String originalUrl;
     @Column(nullable = false, unique = true, length = 10)
-    private String shortUrl;
+    private String shortCode;
     private LocalDateTime createdAt;
     private Long accessCount = 0L;
 }
